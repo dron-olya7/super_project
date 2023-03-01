@@ -17,11 +17,11 @@ if(len(sys.argv) <= 2):
     #новый коммент
     #пользователь вводит название файла
     namefile = input("Enter the name of file, for example 100:\n")
-    print("You chose file: ",a)
+    print("You chose file: ",namefile)
 
     #пользователь вводит директорию 
     directory = input("Enter the name of the Physionet database directory from which to find the required record files for example: mitdb/1.0.0:\n")
-    print("You chose Physionet directory: ",b)  
+    print("You chose Physionet directory: ",directory)  
     
 
 if(len(sys.argv) >= 3):
