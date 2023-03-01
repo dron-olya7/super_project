@@ -8,16 +8,38 @@ import posixpath
 
 import wfdb
 
-#новый коммент
-#пользователь вводит название файла
-a = input("Enter the name of file, for example 100:\n")
-print("You chose file: ",a)
+namefile = ""
+directory = ""
+sempling = 1000
 
-#пользователь вводит директорию 
-b = input("Enter the name of the Physionet database directory from which to find the required record files for example: mitdb/1.0.0:\n")
-print("You chose Physionet directory: ",b)
+if(len(sys.argv) <= 2):
+    #новый коммент
+    #пользователь вводит название файла
+    namefile = input("Enter the name of file, for example 100:\n")
+    print("You chose file: ",a)
 
+    #пользователь вводит директорию 
+    directory = input("Enter the name of the Physionet database directory from which to find the required record files for example: mitdb/1.0.0:\n")
+    print("You chose Physionet directory: ",b)  
+    
 
-record2 = wfdb.rdrecord(a, pn_dir=b, sampto=1000)
-wfdb.plot_wfdb(record=record2, title=f'Record {a} from PhysioNet mitdb')
+if(len(sys.argv) >= 3):
+
+    i = 1
+    while i < len(sys.argv):
+    
+        if(sys.argv[i] == "-s"):
+            sempling = int(sys.argv[i + 1])
+            i += 2     
+        if(sys.argv[i] == "-i"):
+            namefile = sys.argv[i + 1]
+            i += 2
+            
+        if(sys.argv[i] == "-d"):
+            directory = sys.argv[i + 1]
+            i += 2 
+          
+
+record2 = wfdb.rdrecord(namefile, pn_dir=directory, sampto=sempling)
+wfdb.plot_wfdb(record=record2, title=f'Record {namefile} from PhysioNet mitdb')
 
