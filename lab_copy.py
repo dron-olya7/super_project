@@ -8,6 +8,7 @@ import posixpath
 
 import wfdb
 
+#новый коммент
 #пользователь вводит название файла
 a = input("Enter the name of file, for example 100:\n")
 print("You chose file: ",a)
