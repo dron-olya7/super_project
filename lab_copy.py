@@ -8,10 +8,11 @@ import posixpath
 
 import wfdb
 
-#
+#пользователь вводит название файла
 a = input("Enter the name of file, for example 100:\n")
 print("You chose file: ",a)
 
+#пользователь вводит директорию 
 b = input("Enter the name of the Physionet database directory from which to find the required record files for example: mitdb/1.0.0:\n")
 print("You chose Physionet directory: ",b)
 
