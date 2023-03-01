@@ -21,7 +21,7 @@ import wfdb
 TOKEN = "5501433938:AAEFl5ZvofaPuILEdc0fZkWaKrd1MyHwUpk"
 bot = telebot.TeleBot(TOKEN)
 
-
+#Добавлен обработчик
 @bot.message_handler(commands=['system', 'start'])
 def system(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
