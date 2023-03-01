@@ -5,6 +5,7 @@ import numpy as np
 import os
 import shutil
 import posixpath
+import sys
 
 import wfdb
 
